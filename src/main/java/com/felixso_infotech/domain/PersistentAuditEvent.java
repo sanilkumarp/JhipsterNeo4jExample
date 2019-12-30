@@ -1,35 +1,33 @@
 package com.felixso_infotech.domain;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.validation.constraints.NotNull;
+
+import org.neo4j.ogm.annotation.NodeEntity;
+import org.springframework.data.annotation.Id;
 
 /**
  * Persist AuditEvent managed by the Spring Boot actuator.
  *
  * @see org.springframework.boot.actuate.audit.AuditEvent
  */
-@Document(collection = "jhi_persistent_audit_event")
+@NodeEntity(label = "jhi_persistent_audit_event")
 public class PersistentAuditEvent implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Field("event_id")
     private String id;
 
     @NotNull
     private String principal;
 
-    @Field("event_date")
     private Instant auditEventDate;
 
-    @Field("event_type")
     private String auditEventType;
 
     private Map<String, String> data = new HashMap<>();

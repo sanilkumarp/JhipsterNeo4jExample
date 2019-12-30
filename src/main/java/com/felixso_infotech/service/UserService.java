@@ -135,7 +135,7 @@ public class UserService {
      * @return a list of all the authorities.
      */
     public List<String> getAuthorities() {
-        return authorityRepository.findAll().stream().map(Authority::getName).collect(Collectors.toList());
+        return ((Collection<Authority>) authorityRepository.findAll()).stream().map(Authority::getName).collect(Collectors.toList());
     }
 
     private User syncUserWithIdP(Map<String, Object> details, User user) {

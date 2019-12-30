@@ -4,9 +4,9 @@ import com.felixso_infotech.config.Constants;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.StringUtils;
+import org.neo4j.ogm.annotation.Index;
+import org.neo4j.ogm.annotation.NodeEntity;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -20,7 +20,8 @@ import java.util.Set;
 /**
  * A user.
  */
-@org.springframework.data.mongodb.core.mapping.Document(collection = "jhi_user")
+@NodeEntity(label = "jhi_user")
+
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -31,30 +32,26 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @NotNull
     @Pattern(regexp = Constants.LOGIN_REGEX)
     @Size(min = 1, max = 50)
-    @Indexed
+    @Index
     private String login;
 
     @Size(max = 50)
-    @Field("first_name")
     private String firstName;
 
     @Size(max = 50)
-    @Field("last_name")
     private String lastName;
 
     @Email
     @Size(min = 5, max = 254)
-    @Indexed
+    @Index
     private String email;
 
     private boolean activated = false;
 
     @Size(min = 2, max = 10)
-    @Field("lang_key")
     private String langKey;
 
     @Size(max = 256)
-    @Field("image_url")
     private String imageUrl;
 
     @JsonIgnore
