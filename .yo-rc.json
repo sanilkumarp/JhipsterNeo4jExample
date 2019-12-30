@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.felixso_infotech",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "microservice",
+    "baseName": "JhipsterNeo4j",
+    "packageName": "com.felixso_infotech",
+    "packageFolder": "com/felixso_infotech",
+    "serverPort": "8081",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "NmI5OTNlZWMyYzNhYjllNGU2YmEyMzllMGRlOGQyMDg5ZWI4MzMwYTg5ODVmNjk0NDUyYmRiMTg5YmUyMGYwYTA0MTdkNzRjYWI1MjZjZTM3MTE2MzQwYjliZmMwMWVlZjE4ZjMwMzEzZTExYjA1NTcyZmQ4NDcyYWM5MTc5NmM=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1577685848425,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en", "hi"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
